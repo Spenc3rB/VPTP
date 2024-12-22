@@ -4,15 +4,18 @@
 
 ## Hardware Used
 
-- Raspberry Pi 5 Model B
+- Raspberry Pi 5 Model B. Why? Because it includes a Real-Time Clock (RTC) built into the board, a quad core processor ([with cryptographic extensions](https://www.engr.colostate.edu/~jdaily/presentations/2017%20Seed%20Key%20Exchange.pdf)), 8GB of RAM, a power button, bluetooth 5.0 / BLE, Dual Band WiFi, PCIe 2.0 interface for faster storage, and more. 
 
 - 64GB MicroSD Card
 
-- 5.1v 5.0A Power Supply
+- 5.1v 5.0A Power Supply, with optional [RPi UPS](https://www.amazon.com/Geekworm-X1202-Raspberry-Shutdown-Detection/dp/B0CRZ4ZXQW?ref_=ast_sto_dp)
 
 - Elecrow 5" HDMI Touchscreen Display
 
-- [SDR (Software Defined Radio) for RF Testing, WiFi, and Bluetooth Capturing](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview)
+- [Google Coral Mini PCIe Accelerator](https://coral.ai/products/pcie-accelerator/) with the [RPi M.2 Hat+](https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html) for identifying diagnostic ports, parts of a vehicle, and more.
+
+
+- [SDR (Software Defined Radio) for RF Testing, WiFi, and Bluetooth Capturing](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO.html#eb-overview), even with the built in Bluetooth and WiFi capabilities.
 
 - [Mini Keyboard](https://www.adafruit.com/product/3601) 
 
