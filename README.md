@@ -13,7 +13,7 @@ VPTP (Vehicle Penetration Testing Platform) is intended to be a *mobile* platfor
 - John the Ripper
 - etc.
 
-The original platform is intended to be run on a Raspberry Pi 5 Model B, but should be able to be run on any hardware that can run Kali Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
+The original platform is intended to be run on a Raspberry Pi 5, but should be able to be run on any hardware that can run Kali Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
 
 > Please note this is a Work In Progress (WIP) and is not yet complete. Feel free to contact me with any questions or concerns.
 
@@ -84,10 +84,6 @@ Tools planned to be included:
 ### Feature Requests
 
 ### Pull Requests
-
-### Adding more automotive data to the platform
-
-(e.g. https://github.com/LucianPopaLP/ECUPrint?tab=readme-ov-file)
 
 ## License
 [GNU General Public License v3.0](./LICENSE)
