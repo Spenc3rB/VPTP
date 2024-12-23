@@ -30,6 +30,8 @@ Tools planned to be included:
 - [can-utils](https://github.com/linux-can/can-utils) for basic CAN bus analysis
 - [CanCat](https://github.com/atlas0fd00m/CanCat) for more advanced CAN bus analysis
 - [c0f](https://github.com/zombieCraig/c0f) for fingerprinting CAN bus systems
+- [Canexplorer](https://github.com/Tbruno25/can-explorer) for quick reverse engineering of CAN bus systems
+- [OpenDBC](https://github.com/commaai/opendbc) for reading and writing DBC files, and keeping track of vehicle databases
 - [CaringCaribou](https://github.com/CaringCaribou/caringcaribou) for UDS analysis
 - [TruckDevil](https://github.com/LittleBlondeDevil/TruckDevil) for J1939 analysis
 - [ICSim](https://github.com/zombieCraig/ICSim) for educational purposes
