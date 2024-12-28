@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+### Description: This script is used to calibrate the VPTP touch panel.
+### Author: deadb33r
+### Version: 1.0
+### Date: 2024 12 28
+### License: MIT
+
+# note: the name is ironic, because I h8 the amount of acronyms I need to remember on a daily basis
+echo "
+    ██    ██ ██████  ████████ ██████  ████████ ██████   ██████ 
+    ██    ██ ██   ██    ██    ██   ██    ██    ██   ██ ██      
+    ██    ██ ██████     ██    ██████     ██    ██████  ██      
+     ██  ██  ██         ██    ██         ██    ██      ██      
+      ████   ██         ██    ██         ██    ██       ██████ 
+                                                                     
+    VPTP Touch Panel Calibrator (VPTPTPC)                                   
+                                              "
+xinput_calibrator > /tmp/vptptpc.log
+min_x=$(grep -oP 'Option\s+"MinX"\s+"\K[0-9]+' /tmp/vptptpc.log)
+max_x=$(grep -oP 'Option\s+"MaxX"\s+"\K[0-9]+' /tmp/vptptpc.log)
+min_y=$(grep -oP 'Option\s+"MinY"\s+"\K[0-9]+' /tmp/vptptpc.log)
+max_y=$(grep -oP 'Option\s+"MaxY"\s+"\K[0-9]+' /tmp/vptptpc.log)
+
+# check values exist
+
+if [[ -z "$min_x" || -z "$max_x" || -z "$min_y" || -z "$max_y" ]]; then
+    echo "Failed to extract calibration values from xinput_calibrator output. See stderr."
+    exit 1
+fi
+
+echo "Calibration data extracted:"
+echo "MinX: $min_x, MaxX: $max_x, MinY: $min_y, MaxY: $max_y"
+
+# libinput calibration matrix:
+scale_x=$(echo "($max_x - $min_x) / 65535" | bc -l)
+offset_x=$(echo "-$min_x / 65535" | bc -l)
+scale_y=$(echo "($max_y - $min_y) / 65535" | bc -l)
+offset_y=$(echo "-$min_y / 65535" | bc -l)
+
+echo "Calculated calibration matrix:"
+echo "$scale_x 0 $offset_x 0 $scale_y $offset_y 0 0 1"
+
+device_name=$(libinput list-devices | grep -B4 "Capabilities:.*touch" | grep "Device:" | awk -F':' '{print $2}' | xargs)
+
+if [[ -z "$device_name" ]]; then
+    echo "Failed to identify the touchscreen device using libinput."
+    exit 1
+fi
+
+echo "Touchscreen device identified: $device_name"
+
+udev_rules_file="/etc/udev/rules.d/99-calibration.rules"
+echo "Creating Udev rule at $udev_rules_file..."
+echo "# Calibration for $device_name" | sudo tee $udev_rules_file
+echo "ACTION==\"add|change\", KERNEL==\"event[0-9]*\", ENV{LIBINPUT_CALIBRATION_MATRIX}=\"$scale_x 0 $offset_x 0 $scale_y $offset_y 0 0 1\"" | sudo tee -a $udev_rules_file
+
+echo "Udev rule created successfully."
+
+echo "Reloading Udev rules..."
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+echo "Calibration applied! Test your touchscreen and adjust if necessary."
+echo "You can manually edit the Udev rule at $udev_rules_file if needed."

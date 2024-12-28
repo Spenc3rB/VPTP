@@ -10,7 +10,9 @@
 sudo apt-get update
 ```
 
-### Step 2: Install the drivers for the Elecrow 5" HDMI Touchscreen Display
+### Step 2: Install the drivers for the Elecrow 5" HDMI Touchscreen Display 
+
+> Note: The Elecrow 5" TFT LCD is a pain to get working and the touchscreen is not very accurate. I would recommend using their 5" capacitive touchscreen instead. The inscructions below will be updated to reflect the capacitive touchscreen once I have one to test with.
 
 ```bash
 echo "hdmi_force_hotplug=1
@@ -26,5 +28,17 @@ dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy
 sudo reboot now
 ```
 ```bash
-sudo apt install xinput-calibrator
+sudo apt install xinput-calibrator libinput-tools -y
+```
+
+### Step 3: Calibrate the touchscreen
+
+```bash
+./vptp_calibrator
+```
+
+### Step 4: Install the VPTP software
+
+```bash
+./vptp_installer
 ```
