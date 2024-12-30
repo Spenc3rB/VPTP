@@ -1,6 +1,6 @@
 # VPTP - Vehicle Penetration Testing Platform
 
-<img src="./imgs/vptp-logo.png" alt="VPTP Logo" width="30%" style="max-width:200px; height:auto;">
+<img src="./media/vptp-logo.png" alt="VPTP Logo" width="30%" style="max-width:200px; height:auto;">
 
 
 ## Description
