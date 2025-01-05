@@ -99,4 +99,4 @@ sudo gem install c0f
 
 #### 2.5 Install Custom Software
 
-> TODO: systemd services, slcan testing, etc.
+> TODO: systemd services, slcan testing, custom OS options (e.g. custom splash video, desktop theme, capacative touch screen drivers, etc.)
