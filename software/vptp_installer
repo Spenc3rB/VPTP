@@ -24,11 +24,54 @@ sudo apt upgrade
 # https://forums.raspberrypi.com/viewtopic.php?t=367274
 sudo apt remove -y xtrx-dkms
 # end for now
-sudo apt install -y can-utils \ 
-                    pipx \
-                    gnuradio \
-                    gqrx \ 
-                    jupyter \
-                    openocd \
+sudo apt install -y \ 
+      can-utils \
+      pipx \
+      gnuradio \
+      gqrx-sdr \
+      jupyter \
+      openocd \
+      sigrok \
+      sigrok-firmware-fx2lafw \
+      ruby \
+      ruby-dev \
+      python3-scapy \
+
+# git managed packages
+cd ~/Desktop
+
+## CanCat
+git clone https://github.com/atlas0fd00m/
+cd CanCat
+sudo python setup.py install
+cd ~/Desktop
+## end CanCat
+
+## opendbc
+git clone https://github.com/commaai/opendbc
+## end opendbc
+
+## caringcaribou
+git clone https://github.com/CaringCaribou/caringcaribou
+cd caringcaribou
+sudo python setup.py install
+cd ~/Desktop
+## end caringcaribou
+
+## TruckDevil
+git clone https://github.com/LittleBlondeDevil/TruckDevil
+
+
+# gem managed packages
+sudo gem install c0f
 
 # pip managed packages
+# create a virtual environment for the python-based tools
+python3 -m venv ~/Desktop/vptp_venv
+source ~/Desktop/vptp_venv/bin/activate
+pip install --upgrade pip
+pip install \
+      python-can \
+      python-uds \
+      can-isotp \
+      can-j1939 \

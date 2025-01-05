@@ -21,25 +21,25 @@ The original platform is intended to be run on a Raspberry Pi 5, but should be a
 (Using the PCAN or CAN2USB adapters)
 Tools planned to be included:
 - [can-utils](https://github.com/linux-can/can-utils) for basic CAN bus analysis ✅
-- [CanCat](https://github.com/atlas0fd00m/CanCat) for more advanced CAN bus analysis 
-- [c0f](https://github.com/zombieCraig/c0f) for fingerprinting CAN bus systems
+- [CanCat](https://github.com/atlas0fd00m/CanCat) for more advanced CAN bus analysis ➖ needs to be ported to socketcan
+- [c0f](https://github.com/zombieCraig/c0f) for fingerprinting CAN bus systems ➖ testing needs to be done
 - [Canexplorer](https://github.com/Tbruno25/can-explorer) for quick reverse engineering of CAN bus systems ❌ (dearpygui not supported on pi 5 yet)
-- [OpenDBC](https://github.com/commaai/opendbc) for reading and writing DBC files, and keeping track of vehicle databases
+- [OpenDBC](https://github.com/commaai/opendbc) for reading and writing DBC files, and keeping track of vehicle databases ✅
 - [CaringCaribou](https://github.com/CaringCaribou/caringcaribou) for UDS analysis
 - [TruckDevil](https://github.com/LittleBlondeDevil/TruckDevil) for J1939 analysis
 - [ICSim](https://github.com/zombieCraig/ICSim) for educational purposes
 - [UDSim](https://github.com/zombieCraig/UDSim) for educational purposes
 - [SavvyCAN](https://www.savvycan.com/) for CAN bus analysis ➖ needs work on MQTT and [slcan](https://github.com/tixiv/lib-slcan) for remote CAN bus analysis
 - [GNU Radio](https://www.gnuradio.org/) for SDR ➖ need to fix xtrx-dkms
-- [Scapy Automotive](https://scapy.readthedocs.io/en/latest/installation.html) for packet crafting and injection
-- [Jupyter Lab](https://jupyter.org/) for data analysis
+- [Scapy Automotive](https://scapy.readthedocs.io/en/latest/installation.html) for packet crafting and injection ✅
+- [Jupyter Lab](https://jupyter.org/) for data analysis ✅
 - [Canmatrix](https://github.com/ebroecker/canmatrix) for reading and writing several database formats (e.g. .dbc, .dbf, .kcd, .arxml)
 - [rpi_hardware_pwm](https://github.com/Pioreactor/rpi_hardware_pwm) for bitbanging via the PWM pins on the Raspberry Pi
-- [Sigrok](https://sigrok.org/wiki/Main_Page) for the bitmagic basic logic analyzer
-- [OpenOCD](https://openocd.org/) for the Tigard Protocol Tool
+- [Sigrok](https://sigrok.org/wiki/Main_Page) for the bitmagic basic logic analyzer ➖ still need to test with bitmagic analyzer
+- [OpenOCD](https://openocd.org/) for the Tigard Protocol Tool ✅
 
 #### Python Development Environment:
-- [Python-CAN](https://pypi.org/project/python-can/), [Python-OBD](https://python-obd.readthedocs.io/en/latest/), [Python-UDS](https://python-uds.readthedocs.io/en/latest/installation.html), [Python-can-isotp](https://github.com/pylessard/python-can-isotp), [Python-can-j1939](https://github.com/juergenH87/python-can-j1939), [Python-RP1210](https://pypi.org/project/RP1210/)
+- [Python-CAN](https://pypi.org/project/python-can/), [Python-UDS](https://python-uds.readthedocs.io/en/latest/installation.html), [Python-can-isotp](https://github.com/pylessard/python-can-isotp), [Python-can-j1939](https://github.com/juergenH87/python-can-j1939), [Python-RP1210](https://pypi.org/project/RP1210/)
 
 ### Object Identification
 
