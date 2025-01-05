@@ -17,9 +17,18 @@ echo "
 
 echo "Installing dependencies..."
 sudo apt update
+sudo apt upgrade
 # apt managed packages
+# for now
+# lost xtrx funcitonality with the updated kernel:
+# https://forums.raspberrypi.com/viewtopic.php?t=367274
+sudo apt remove -y xtrx-dkms
+# end for now
 sudo apt install -y can-utils \ 
                     pipx \
-                    
+                    gnuradio \
+                    gqrx \ 
+                    jupyter \
+                    openocd \
+
 # pip managed packages
-sudo              
