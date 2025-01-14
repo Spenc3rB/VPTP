@@ -10,11 +10,13 @@ The original platform is intended to be run on a Raspberry Pi 5, but should be a
 
 > Please note this is a Work In Progress (WIP) and is not yet complete. Feel free to contact me with any questions or concerns.
 
-## Features
+## Features: Quick Overview
 
 ### Cryptographic Analysis
 
 (Using the built-in cryptographic extensions of the Raspberry Pi 5 to speed up the process of cracking hashes, seed-key exchanges, etc.)
+
+TODO: show with and without cryptographic extensions using [hashcat](https://hashcat.net/hashcat/)
 
 ### Vehicle Diagnostics 
 
@@ -39,7 +41,10 @@ Tools planned to be included:
 - [OpenOCD](https://openocd.org/) for the Tigard Protocol Tool ✅
 
 #### Python Development Environment:
-- [Python-CAN](https://pypi.org/project/python-can/), [Python-UDS](https://python-uds.readthedocs.io/en/latest/installation.html), [Python-can-isotp](https://github.com/pylessard/python-can-isotp), [Python-can-j1939](https://github.com/juergenH87/python-can-j1939), [Python-RP1210](https://pypi.org/project/RP1210/)
+- [Python-CAN](https://pypi.org/project/python-can/) ✅
+- [Py-UDS](https://pypi.org/project/py-uds/) ✅
+- [Python-can-isotp](https://github.com/pylessard/python-can-isotp) ✅
+- [Python-can-j1939](https://github.com/juergenH87/python-can-j1939) ✅
 
 ### Object Identification
 

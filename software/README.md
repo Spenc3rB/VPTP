@@ -21,6 +21,11 @@ cp ~/VPTP/software/desktop/*.desktop ~/Desktop
 sed -i "s|\$HOME|$HOME|g" ~/Desktop/*.desktop
 ```
 
+> TODO: add desktop icons for the following:
+> - can-utils
+> - c0f
+> - OpenDBC
+
 #### 2.1 Install core dependencies
 
 ```bash
@@ -35,7 +40,8 @@ sudo apt install -y \
       sigrok-firmware-fx2lafw \
       ruby \
       ruby-dev \
-      python3-scapy
+      python3-scapy \
+      npm?
 ```
 
 #### 2.2 Install Misc. Git Repositories
@@ -75,7 +81,9 @@ truckdevil() {
     cd "$current_dir"
 }" >> ~/.bashrc
 ```
-> TODO: ICsim, UDSim, rpi_hardware_pwm, canexplorer (dearpygui not supported on pi 5 yet)
+> TODO: canexplorer (dearpygui not supported on pi 5 yet)
+
+##### 2.2.5 Install and setup the UD
 
 #### 2.3 Install Python Dependencies
 
@@ -87,7 +95,8 @@ pip install \
       python-can \
       python-uds \
       can-isotp \
-      can-j1939 
+      can-j1939 \
+      rpi-hardware-pwm
 ```
 
 #### 2.4 Install Ruby Dependencies
