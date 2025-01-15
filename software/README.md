@@ -43,8 +43,9 @@ sudo apt install -y \
       python3-scapy \
       apt-transport-https \
       software-properties-common \
-      wget
+      
 ```
+TODO ^^^ Add mothods for grafana and influxdb via apt
 
 #### 2.2 Install Misc. Git Repositories
 
@@ -111,3 +112,17 @@ sudo gem install c0f
 #### 2.5 Install Custom Software
 
 > TODO: systemd services, slcan testing, custom OS options (e.g. custom splash video, desktop theme, capacative touch screen drivers, etc.)
+
+#### 2.6 Fixes
+
+##### 2.6.1 Fix the Pi 5 Power Issue
+Thanks to [this](https://www.jeffgeerling.com/blog/2023/reducing-raspberry-pi-5s-power-consumption-140x) beautiful blog post.
+```bash
+sudo rpi-eeprom-config -e
+```
+
+Then ensure that the following is set:
+```bash
+BOOT_UART=1
+POWER_OFF_ON_HALT=1
+```
