@@ -41,7 +41,9 @@ sudo apt install -y \
       ruby \
       ruby-dev \
       python3-scapy \
-      npm?
+      apt-transport-https \
+      software-properties-common \
+      wget
 ```
 
 #### 2.2 Install Misc. Git Repositories

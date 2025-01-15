@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from flask_socketio import SocketIO
 import pty
 import os
@@ -63,6 +63,14 @@ def index():
 def terminal():
     return render_template("./static/html/terminal.html")
 
+@app.route("/login")
+def login():
+    return render_template("./static/html/login.html")
+
+@app.route("/grafana")
+def grafana():
+    # forward the user to the grafana page
+    return redirect(f"http://{request.host.split(':')[0]}:3000", code=302)
 
 @socketio.on("pty-input", namespace="/pty")
 def pty_input(data):
