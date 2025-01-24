@@ -126,3 +126,7 @@ Then ensure that the following is set:
 BOOT_UART=1
 POWER_OFF_ON_HALT=1
 ```
+
+TODO:
+
+- Look into wireshark flow graph for can
