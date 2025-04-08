@@ -6,7 +6,7 @@
 ## Description
 VPTP (Vehicle Penetration Testing Platform) is intended to be a *mobile* platform designed for quick-turnaround times in testing vehicle systems given a known set of security vulnerabilities. It's original intention is to be a wrapper OS, built on the commonly known raspbian distribution, due to it's hardware support.
 
-The original platform is intended to be run on a Raspberry Pi 5, but should be able to be run on any hardware that can run Kali Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
+The original platform is intended to be run on a Raspberry Pi 5, but should be able to be run on any hardware that can run Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
 
 > Please note this is a Work In Progress (WIP) and is not yet complete. Feel free to contact me with any questions or concerns.
 
