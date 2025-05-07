@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=CanCat
-Comment=CanCat quick start module
-Exec=lxterminal -e "bash -c 'CanCat -p /dev/ttyACM0'; exec bash"
-Icon=$HOME/VPTP/software/desktop/cancat.png
-Terminal=true
-Type=Application

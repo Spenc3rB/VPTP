@@ -42,5 +42,6 @@
 
 Install the config.txt file to the following location:
 ```bash
-install -m 644 config.txt /boot/firmware/config.txt
+sudo install -m 644 config.txt /boot/firmware/config.txt
+sudo install -m 644 autostart /etc/xdg/lxsession/LXDE-pi/autostart
 ```

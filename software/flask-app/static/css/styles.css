@@ -1,0 +1,45 @@
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dropdown text only, no borders or backgrounds */
+#hacking-car-dropdown {
+    display: none;
+    position: static;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+/* Universal Color for Text */
+.vptp-color {
+    color: #99c5a1;
+}
+
+
+/* Style individual items to look like plain text */
+#hacking-car-dropdown .dropdown-item {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+/* Optional: Hover effect */
+#hacking-car-dropdown .dropdown-item:hover {
+    text-decoration: underline;
+    color: #99c5a1 !important
+}
+
