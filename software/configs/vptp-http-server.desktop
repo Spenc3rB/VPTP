@@ -1,0 +1,10 @@
+# install this to ~/Desktop or .config/autostart
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=VPTP Web App
+Comment=Launch Chromium in kiosk-style app window
+Exec=/usr/bin/chromium-browser --app=http://localhost:5000 --start-maximized
+Icon=/home/beersc/VPTP/media/vptp-logo.png
+Terminal=false
+Categories=Network;WebBrowser;

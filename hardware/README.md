@@ -6,7 +6,7 @@
 
 ### Core Components
 
-- Raspberry Pi 5 Model B. Why? Because it includes a Real-Time Clock (RTC) built into the board, a quad core processor ([with cryptographic extensions](https://www.engr.colostate.edu/~jdaily/presentations/2017%20Seed%20Key%20Exchange.pdf)), 8GB of RAM, a power button, bluetooth 5.0 / BLE, Dual Band WiFi, PCIe 2.0 interface for faster storage, and more.
+- Raspberry Pi 5 Model B. Why? Because it includes a Real-Time Clock (RTC) built into the board, a quad core processor ([with cryptographic extensions](https://www.engr.colostate.edu/~jdaily/presentations/2017%20Seed%20Key%20Exchange.pdf)), 8GB of RAM, a power button, bluetooth 5.0 / BLE, Dual Band WiFi, PCIe 2.0 interface for faster storage, and more. See here: https://www.xda-developers.com/best-single-board-computer/. 
 
 - 64GB MicroSD Card
 
@@ -37,11 +37,3 @@
 - [Deutsch 9-pin to DB9 Cable (optional)](https://www.amazon.com/GXMRHWY-Cable-Deutsch-Connector-Female/dp/B0C5XBNGGL) --> MHD Vehicles (e.g. John Deere, Caterpillar, Cummins, etc.)
 
 - [Fans, a lot of em'](https://www.digikey.com/en/products/detail/adafruit-industries-llc/4468/11587354?gclsrc=aw.ds&utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_Medium%20ROAS%20Categories&utm_term=&utm_content=&utm_id=go_cmp-20223376311_adg-_ad-__dev-c_ext-_prd-11587354_sig-CjwKCAiAjp-7BhBZEiwAmh9rBf2Wtx2g0co_zDT26a9iJaVTtEEFEIpt9ig0RBnOY_veiiCc6xDS4BoCEJMQAvD_BwE&gad_source=1&gclsrc=ds) assuming the thermal output of the pi is going to be high with all of the peripherals.
-
-# Installation
-
-Install the config.txt file to the following location:
-```bash
-sudo install -m 644 config.txt /boot/firmware/config.txt
-sudo install -m 644 autostart /etc/xdg/lxsession/LXDE-pi/autostart
-```

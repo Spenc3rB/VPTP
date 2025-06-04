@@ -23,7 +23,7 @@ def index():
 @app.route("/grafana")
 def grafana():
     # forward the user to the grafana page
-    return redirect(f"http://{request.host.split(':')[0]}:3000", code=302)
+    return redirect(f"http://{request.host.split(':')[0]}:4000", code=302)
 
 def main():
     parser = argparse.ArgumentParser(

@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Chromium Kiosk Web App for theVPTP
-Exec=/usr/bin/chromium-browser --kiosk --noerrdialogs --disable-infobars http://localhost:5000
-Comment=Launch web app in kiosk mode at startup
