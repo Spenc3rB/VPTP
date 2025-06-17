@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bare - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+        <!-- Bootsrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body class="bg-black d-flex flex-column justify-content-center align-items-center vh-100">
+        <!-- Page content-->
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1 class="vptp-color">Vehicle Penetration Testing Platform</h1>
+                <img src="{{ url_for('static', filename='assets/hacking-car-gif.gif') }}"
+                     id ="hacking-car-gif"
+                     alt="Hacking Car GIF"
+                     class="fade-in img-fluid"
+                     style="cursor: pointer;">
+            </div>
+        </div>
+        <div id="hacking-car-dropdown" class="dropdown-menu show mt-3" style="display: none; position: static;">
+            <a class="dropdown-item vptp-color" href="{{ url_for('grafana') }}">Grafana Dashboard</a>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>

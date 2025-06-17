@@ -1,0 +1,13 @@
+[Unit]
+Description=VPTP Flask App
+After=network.target
+
+[Service]
+User=beersc
+WorkingDirectory=/home/beersc/VPTP/software/flask-app
+ExecStart=/usr/bin/python3 /home/beersc/VPTP/software/flask-app/app.py --host 0.0.0.0
+Restart=always
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target

@@ -1,53 +1,50 @@
 # VPTP - Vehicle Penetration Testing Platform
 
-<img src="./imgs/vptp-logo.png" alt="VPTP Logo" width="30%" style="max-width:200px; height:auto;">
+<img src="./media/vptp-logo.png" alt="VPTP Logo" width="30%" style="max-width:200px; height:auto;">
 
 
 ## Description
-VPTP (Vehicle Penetration Testing Platform) is intended to be a *mobile* platform designed for quick-turnaround times in testing vehicle systems given a known set of security vulnerabilities. It's original intention is to be a wrapper OS, built on the commonly known Kali Linux distribution, which already includes some of the most popular penetration testing tools:
+VPTP (Vehicle Penetration Testing Platform) is intended to be a *mobile* platform designed for quick-turnaround times in testing vehicle systems given a known set of security vulnerabilities. It's original intention is to be a wrapper OS, built on the commonly known raspbian distribution, due to it's hardware support.
 
-- Metasploit
-- Nmap
-- Wireshark
-- Aircrack-ng
-- John the Ripper
-- etc.
-
-The original platform is intended to be run on a Raspberry Pi 5, but should be able to be run on any hardware that can run Kali Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
+The original platform is intended to be run on a Raspberry Pi 5, but should be able to be run on any hardware that can run Linux. Details of the hardware used to develop the platform are included in the [Hardware](./hardware/hardware.md) documentation. Much of this work is done in collaboration with the research I do at Colorado State University, and is intended to be used for **educational purposes only.**
 
 > Please note this is a Work In Progress (WIP) and is not yet complete. Feel free to contact me with any questions or concerns.
 
-## Features
+## Features: Quick Overview
 
 ### Cryptographic Analysis
 
 (Using the built-in cryptographic extensions of the Raspberry Pi 5 to speed up the process of cracking hashes, seed-key exchanges, etc.)
 
+TODO: show with and without cryptographic extensions using [hashcat](https://hashcat.net/hashcat/)
+
 ### Vehicle Diagnostics 
 
 (Using the PCAN or CAN2USB adapters)
 Tools planned to be included:
-- [can-utils](https://github.com/linux-can/can-utils) for basic CAN bus analysis
-- [CanCat](https://github.com/atlas0fd00m/CanCat) for more advanced CAN bus analysis
-- [c0f](https://github.com/zombieCraig/c0f) for fingerprinting CAN bus systems
-- [Canexplorer](https://github.com/Tbruno25/can-explorer) for quick reverse engineering of CAN bus systems
-- [OpenDBC](https://github.com/commaai/opendbc) for reading and writing DBC files, and keeping track of vehicle databases
+- [can-utils](https://github.com/linux-can/can-utils) for basic CAN bus analysis ✅
+- [CanCat](https://github.com/atlas0fd00m/CanCat) for more advanced CAN bus analysis ➖ needs to be ported to socketcan
+- [c0f](https://github.com/zombieCraig/c0f) for fingerprinting CAN bus systems ➖ testing needs to be done
+- [Canexplorer](https://github.com/Tbruno25/can-explorer) for quick reverse engineering of CAN bus systems ❌ (dearpygui not supported on pi 5 yet)
+- [OpenDBC](https://github.com/commaai/opendbc) for reading and writing DBC files, and keeping track of vehicle databases ✅
 - [CaringCaribou](https://github.com/CaringCaribou/caringcaribou) for UDS analysis
 - [TruckDevil](https://github.com/LittleBlondeDevil/TruckDevil) for J1939 analysis
 - [ICSim](https://github.com/zombieCraig/ICSim) for educational purposes
 - [UDSim](https://github.com/zombieCraig/UDSim) for educational purposes
-- [SavvyCAN](https://www.savvycan.com/) for CAN bus analysis
-- [slcan](https://github.com/tixiv/lib-slcan) for remote CAN bus analysis
-- [GNU Radio](https://www.gnuradio.org/) for SDR
-- [Scapy Automotive](https://scapy.readthedocs.io/en/latest/installation.html) for packet crafting and injection
-- [Jupyter Lab](https://jupyter.org/) for data analysis
+- [SavvyCAN](https://www.savvycan.com/) for CAN bus analysis ➖ needs work on MQTT and [slcan](https://github.com/tixiv/lib-slcan) for remote CAN bus analysis
+- [GNU Radio](https://www.gnuradio.org/) for SDR ➖ need to fix xtrx-dkms
+- [Scapy Automotive](https://scapy.readthedocs.io/en/latest/installation.html) for packet crafting and injection ✅
+- [Jupyter Lab](https://jupyter.org/) for data analysis ✅
 - [Canmatrix](https://github.com/ebroecker/canmatrix) for reading and writing several database formats (e.g. .dbc, .dbf, .kcd, .arxml)
 - [rpi_hardware_pwm](https://github.com/Pioreactor/rpi_hardware_pwm) for bitbanging via the PWM pins on the Raspberry Pi
-- [Sigrok](https://sigrok.org/wiki/Main_Page) for the bitmagic basic logic analyzer
-- [OpenOCD](https://openocd.org/) for the Tigard Protocol Tool
+- [Sigrok](https://sigrok.org/wiki/Main_Page) for the bitmagic basic logic analyzer ➖ still need to test with bitmagic analyzer
+- [OpenOCD](https://openocd.org/) for the Tigard Protocol Tool ✅
 
 #### Python Development Environment:
-- [Python-CAN](https://pypi.org/project/python-can/), [Python-OBD](https://python-obd.readthedocs.io/en/latest/), [Python-UDS](https://python-uds.readthedocs.io/en/latest/installation.html), [Python-can-isotp](https://github.com/pylessard/python-can-isotp), [Python-can-j1939](https://github.com/juergenH87/python-can-j1939), [Python-RP1210](https://pypi.org/project/RP1210/)
+- [Python-CAN](https://pypi.org/project/python-can/) ✅
+- [Py-UDS](https://pypi.org/project/py-uds/) ✅
+- [Python-can-isotp](https://github.com/pylessard/python-can-isotp) ✅
+- [Python-can-j1939](https://github.com/juergenH87/python-can-j1939) ✅
 
 ### Object Identification
 
@@ -60,6 +57,13 @@ Tools planned to be included:
 ### RF Testing
 
 (Using the SDR)
+
+### Other 'Kali Linux' Tools
+
+- nmap
+- metasploit
+- aircrack-ng
+- etc.
 
 ### VPTP Quick Penetration Testing
 

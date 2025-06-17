@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# /usr/bin/address_claim
+# J1939 Address Claim Cycler for SocketCAN
+# Usage: address_claim <can-interface> <baud> <delay-ms> <loop-delay-ms>
+#
+# Requires: can-utils (for cansend), run as root (or via sudo without password)
+
+set -e
+
+IFACE="$1"
+BAUD="$2"
+DELAY_MS="$3"
+LOOP_DELAY_MS="$4"
+
+if [[ -z "$IFACE" || -z "$BAUD" || -z "$DELAY_MS" || -z "$LOOP_DELAY_MS" ]]; then
+  echo "Usage: $0 <can-interface> <baud> <delay-ms> <loop-delay-ms>"
+  exit 1
+fi
+
+# Bring down, configure, and bring up the CAN interface
+ip link set "$IFACE" down
+ip link set "$IFACE" type can bitrate "$BAUD"
+ip link set "$IFACE" up
+
+echo "[*] $IFACE @ ${BAUD}bps configured. Starting address‐claim loop…"
+
+# Precalculate sleep durations
+DELAY_S=$(awk "BEGIN { printf \"%.6f\", ${DELAY_MS}/1000 }")
+LOOP_DELAY_S=$(awk "BEGIN { printf \"%.6f\", ${LOOP_DELAY_MS}/1000 }")
+
+while true; do
+  for SA in $(seq 0 253); do
+    # J1939 address‐claim PGN ID: 0x18EEFF00 + source address
+    CAN_ID=$(printf "%08X" $((0x18EEFF00 | SA)))
+    # 8 zero bytes payload
+    DATA="0000000000000000"
+    # Send the frame
+    cansend "$IFACE" "${CAN_ID}#${DATA}"
+    sleep "$DELAY_S"
+  done
+
+  echo "[*] Full cycle complete; sleeping ${LOOP_DELAY_MS}ms…"
+  sleep "$LOOP_DELAY_S"
+done

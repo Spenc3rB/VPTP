@@ -1,0 +1,17 @@
+[Unit]
+Description=Setup CAN and VCAN interfaces
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/sbin/modprobe vcan
+ExecStart=/sbin/ip link add dev vcan0 type vcan
+ExecStart=/sbin/ip link set up vcan0
+ExecStart=/sbin/ip link set can0 type can bitrate 250000
+ExecStart=/sbin/ip link set up can0
+ExecStop=/sbin/ip link set down vcan0
+ExecStop=/sbin/ip link set down can0
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
