@@ -194,7 +194,7 @@ if [ ! -d "/etc/systemd/system" ]; then
     sudo mkdir -p "/etc/systemd/system"
     sudo cp "$HOME/VPTP/software/configs/vptp-http-server.service" "/etc/systemd/system/"
     sudo cp "$HOME/VPTP/software/configs/vptp-canlogserver.service" "/etc/systemd/system/"
-    sudo 
+    # TODO: incomplete installation script.. continue to add services as needed
 
 fi
 
