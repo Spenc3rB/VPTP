@@ -18,10 +18,10 @@ def init_logger():
 
 
 def parse_can(file_path, bucket, org, no_timestamp, url, token, logger):
-    with open(file_path, "r") as file:
-        for line in file:
-            try:
-                with InfluxDBClient(url=url, token=token, org=org) as client:
+    with InfluxDBClient(url=url, token=token, org=org) as client:
+        with open(file_path, "r") as file:
+            for line in file:
+                try:
                     parts = line.strip().split()
                     timestamp = float(parts[0].strip("()")) * 1e9  # Convert seconds to nanoseconds
                     can_channel = parts[1]
